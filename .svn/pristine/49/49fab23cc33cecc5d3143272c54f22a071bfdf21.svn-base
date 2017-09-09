@@ -1,0 +1,42 @@
+<?php
+// +----------------------------------------------------------------------
+// | ThinkPHP [ WE CAN DO IT JUST THINK ]
+// +----------------------------------------------------------------------
+// | Copyright (c) 2006-2016 http://thinkphp.cn All rights reserved.
+// +----------------------------------------------------------------------
+// | Licensed ( http://www.apache.org/licenses/LICENSE-2.0 )
+// +----------------------------------------------------------------------
+// | Author: 流年 <liu21st@gmail.com>
+// +----------------------------------------------------------------------
+
+// 应用公共文件
+function getWxconfig($wx = 'awxu'){
+    $arr = ['awxu'=>[
+            'appid' => 'wx5d8261bc6a1a6750',
+            'apps' => '95383f3797be615ee4df8da52b402e43',
+            'yid'   => 'gh_94egdb4h',
+            'token' => '4Yr8TVM3DYVvrqxG',
+            'aeskey' => 'J9X2hqSH2wpcFZ8a3USZa1O9yfikcSXdzmVHdRIkTzX',
+            'name'  => '课程服务号',
+            ],
+        ];
+    return $arr[$wx];
+}
+//添加微信日志
+function addWxLog($yid,$post='',$reply='',$ext=array()){
+    if(!$ext){
+        $ext = $post;
+    }
+    $data = array(
+        'yid'=>$yid,
+        'post'=>is_array($post)?serialize($post):$post,
+        'reply'=>is_array($reply)?serialize($reply):$reply,
+        'type'=>$ext['MsgType'],
+        'event'=>$ext['Event'],
+        'eventkey'=>$ext['eventkey'],
+        'openid'=>$ext['FromUserName'],
+        'keyword'=>$ext['Content'],
+        'add_time'=>date("Y-m-d H:i:s"),
+    );
+    Db:name('wx_log')->insert($data);
+}

@@ -1,0 +1,12 @@
+<?php
+namespace app\index\controller;
+
+class Wechatquizzes
+{
+    public function index()
+    {
+        //return 'hello icebear';
+        error_reporting(E_ALL & ~E_NOTICE);
+        return view();
+    }
+}

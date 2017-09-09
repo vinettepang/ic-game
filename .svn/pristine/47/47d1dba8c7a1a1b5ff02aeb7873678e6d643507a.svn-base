@@ -1,0 +1,23 @@
+<?php
+namespace app\index\controller;
+class Wx{
+    private $wx_config = [];
+    public function __construct(){
+        $this->wx_config = getWxconfig();
+        //error_reporting('E_ALL & ~E_NOTICE');
+    }
+    public function index(){
+        //dump(config('app_namespace'));
+        $wx_config = $this->wx_config;
+        try{
+            $appid = $this->wx_config['appid'];
+            $token = $this->wx_config['token'];
+            $crypt = $this->wx_config['aeskey'];
+            $wechat = new \wechat\Wechat($token, $appid, $crypt);
+            $data = $wechat->request();
+        }catch (\Exception $e){
+            addWxLog($this->wx_config['yid'], json_encode($e->getMessage()), '服务器繁忙，请稍后再试。', array("type" => 'error'));
+            $wechat->replyText("服务器繁忙，请稍后再试。");
+        }
+    }
+}

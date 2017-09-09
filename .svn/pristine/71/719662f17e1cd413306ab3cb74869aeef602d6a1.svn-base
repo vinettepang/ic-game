@@ -1,0 +1,836 @@
+/*base*/
+
+blockquote, body, button, dd, dl, dt, fieldset, form, h1, h2, h3, h4, h5, h6, hr, input, legend, li, ol, p, pre, td, textarea, th, ul {
+    margin: 0;
+    padding: 0
+}
+
+html {
+    font-size: 62.5%;
+    font-weight: normal;
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    -webkit-font-smoothing: antialiased;
+    background-color: #482929;
+    color: #fff !important;
+    font-size: 18px !important;
+    font-family: "Microsoft YaHei","PingFang","微軟正黑體","Helvetica Neue"
+}
+
+html, body {
+    font-family: 'Microsoft YaHei', tahoma, arial, 'Hiragino Sans GB', \5b8b\4f53, sans-serif;
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+ol, ul {
+    list-style: none
+}
+
+a {
+    text-decoration: none
+}
+
+a:hover {
+    text-decoration: underline
+}
+
+* {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+a,button,input{-webkit-tap-highlight-color:rgba(255,0,0,0);}
+/*style*/
+
+.wrap {
+    width: 100%;
+    height: 100%;
+}
+.
+.title {
+    padding-top: 20%;
+    text-align: center;
+}
+.count{
+    padding-right: 12px;
+}
+.clrmgbt{
+    margin-bottom: 0 !important;
+}
+.mgbt20{
+    margin-bottom: 20px !important;
+}
+.btn-container{
+    padding-bottom: 114px;
+}
+.btn{
+    margin-bottom: 50px;
+}
+.btn.btn-active{
+    position: relative;
+    z-index: 10;
+    display: block;
+    color: #482929 !important;
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 2.4px;
+    width: 100%;
+    height: 58px;
+    line-height: 58px;
+    text-align: center;
+    background: #FFD733;
+    border-radius: 100px;
+    margin-left: 48px;
+    margin-right: 48px;
+    margin-top: 120px;
+   /* margin-top: 112px;*/
+    width: 90%;/*写给不支持calc()的浏览器*/ 
+    width:-moz-calc(100% - 48px * 2); 
+    width:-webkit-calc(100% - 48px * 2); 
+    width: calc(100% - 48px * 2);
+    border: none;
+}
+.btn.btn-active:hover,.btn.btn-active:visited,
+.btn.btn-active:active{
+    text-decoration: none;
+    background: #FFD733;
+}
+.btn-share{
+    margin-top: 5px !important;
+    margin-bottom: 13px !important;
+}
+.enter_wrap .wrap_center .enter_btn.btn-active,
+.topic_wrap .ic-next-topic.btn-active{
+    position: relative;
+    z-index: 10;
+    display: block;
+    color: #482929 !important;
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 2.4px;
+    width: 100%;
+    height: 58px;
+    line-height: 58px;
+    background: #FFD733;
+    border-radius: 100px;
+    margin-left: 48px;
+    margin-right: 48px;
+    margin-top: 34px;
+   /* margin-top: 112px;*/
+    width: 90%;/*写给不支持calc()的浏览器*/ 
+    width:-moz-calc(100% - 48px * 2); 
+    width:-webkit-calc(100% - 48px * 2); 
+    width: calc(100% - 48px * 2);
+    border: none;
+}
+.topic_wrap .ic-next-topic.btn-disabled{
+    position: relative;
+    z-index: 10;
+    display: block;
+    color: #B0B0B0 !important;
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 2.4px;
+    width: 100%;
+    height: 58px;
+    line-height: 58px;
+    background: #ffffff;
+    border-radius: 100px;
+    width: 90%;/*写给不支持calc()的浏览器*/ 
+    width:-moz-calc(100% - 48px * 2); 
+    width:-webkit-calc(100% - 48px * 2); 
+    width: calc(100% - 48px * 2);
+    margin-left: 48px;
+    margin-right: 48px;
+    border: none;
+}
+.topic_wrap .topic_detail{
+    margin: -20px 38px 30px 38px;
+    font-size: 15px;
+    letter-spacing: 1.25px;
+}
+.topic_wrap  .topic_detail_img{
+    padding: 20px 0;
+    margin: 0 auto;
+    max-width: 242px;
+}
+.topic_wrap .ic-next-topic{
+    margin-top: 65px !important;
+}
+.topic_wrap .ic-next-topic.btn-active,
+.topic_wrap .ic-next-topic.btn-disabled{
+     margin-top: 65px;
+}
+.enter_wrap {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    /*background: url(/static/images/wechatquizzes/enter_bg.jpg) no-repeat;*/
+    background-color: #482929;
+    background-size: 100% 100%;
+}
+.enter_wrap .enter_title{
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    margin-left: -140px;
+    display: block;
+    height: 61px;
+    width: 280px;
+    background: url(/static/images/wechatquizzes/v2/title_pri.png) no-repeat;
+    background-size: 280px 61px;
+}
+.enter_wrap .enter_sec_title{
+    // position: absolute;
+    // left: 50%;
+    // margin-left: -130px;
+    // height: 61px;
+    // width: 260px;
+    height: 33px;
+    width: 260px;
+    margin: 0 auto;
+}
+// .enter_wrap .enter_sec_title.title_base{
+//     top: -33px;
+// }
+// .enter_wrap .enter_sec_title.title_job{
+//     top: -294px;
+// }
+.enter_wrap .enter_sec_title img{
+    max-width: 65px; 
+}
+.enter_wrap .enter_sec_title_job{
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    margin-left: -140px;
+    display: block;
+    height: 68px;
+    width: 20px;
+    background: url(/static/images/wechatquizzes/v2/title_job.png) no-repeat;
+    background-size: 20px 68px;
+}
+.enter_wrap .bg-left{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: block;
+    height: 555px;
+    width: 115px;
+    background: url(/static/images/wechatquizzes/v2/topic_bg_left.png) no-repeat;
+    background-size: 115px 555px;
+}
+.enter_wrap .bg-right{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    display: block;
+    height:155px ;
+    width: 201px;
+    background: url(/static/images/wechatquizzes/v2/bg.png) no-repeat;
+    background-size: 201px 155px;
+}
+
+.enter_wrap .wrap_top {
+    width: 100%;
+    position: absolute;
+    top: 10%;
+}
+
+.enter_wrap .wrap_top .top_img {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.enter_wrap .wrap_center {
+    width: 100%;
+    position: absolute;
+    top: 148px;
+}
+
+.topic_section {
+    position: relative;
+    text-align: center;
+    font-size: 1.8rem;
+    color: #eee;
+    margin: 0 auto;
+    line-height: 25px;
+    z-index: 10;
+}
+.enter_wrap .topic_section label{
+    position: relative;
+    display: block;
+    margin: 0 auto 10px auto;
+    width: 260px;
+    height: 42px;
+    line-height: 38px;
+    font-size: 20px;
+    font-weight: normal;
+    letter-spacing: 1.67px;
+    border: 2px solid #FFF;
+    border-radius: 4px;
+    //margin-bottom: 10px;
+    text-align: left;
+    //padding-left: 57px;
+}
+
+.enter_wrap .topic_section label span{
+    padding-left: 57px;
+}
+.enter_wrap .topic_section label .section_check{
+    display: none;
+    font-size: 20px;
+    position: absolute;
+    top: 10px;
+    left: 21px;
+    color: #FFD733;
+}
+.enter_wrap .topic_section input[type="radio"]{
+    display: none;
+}
+.enter_wrap .topic_section input[type="radio"]:checked+label{
+    color: #ffeb90;
+    border: 2px solid #FFD733;
+}
+.enter_wrap .topic_section input[type="radio"]:checked+label .section_check{
+    display: block;
+}
+.enter_wrap .wrap_center .enter_btn, .free_btn {
+    width: 50%;
+    margin: 15px auto;
+    color: #eee;
+    text-align: center;
+    font-size: 1.8rem;
+    line-height: 44px;
+    background-size: 1px 44px;
+    border: 1px #282940 solid;
+    box-shadow: 1px 1px 1px #555;
+}
+
+.enter_wrap .wrap_bottom {
+    width: 100%;
+    position: absolute;
+    bottom: 4%;
+}
+
+.enter_wrap .wrap_bottom .bottom_img {
+    width: 60%;
+    margin: 0 auto;
+}
+
+.topic_wrap {
+    display: none;
+    width: 100%;
+    height: 100%;
+    background-color: #482929;
+    /*background: url(/static/images/wechatquizzes/topic_bg.jpg) no-repeat;*/
+    background-size: 100% 100%;
+}
+.topic_wrap .bg-right{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    display: block;
+    height: 155px ;
+    width: 201px;
+    background: url(/static/images/wechatquizzes/v2/bg.png) no-repeat;
+    background-size: 201px 155px;
+}
+.topic_wrap .fade_wrap {
+    width: 100%;
+    height: 100%;
+}
+
+.topic_wrap .wrap_top {
+    width: 100%;
+    position: absolute;
+    top: 8%;
+}
+
+.topic_wrap .wrap_top .topic_no {
+    height: 40px;
+    width: 40px;
+    line-height: 40px;
+    text-align: center;
+    color: #FFF;
+    font-size: 1.2rem;
+    border-radius: 20px;
+    background: url(/static/images/wechatquizzes/topic_no.png) repeat-x;
+    background-size: 1px 42px;
+    margin: 0 auto;
+}
+
+.topic_wrap .wrap_top .topic_no .curr_no {
+    font-size: 1.6rem;
+}
+
+.topic_wrap .wrap_top1 {
+    width: 100%;
+    /*height: 80px;*/
+    padding-top: 30px;
+    /*position: absolute;
+    top: 20%;*/
+}
+
+.topic_wrap .wrap_top1 .topic_title {
+    color: #fff;
+    min-height: 80px;
+    text-align: left;
+    font-size: 2.2rem;
+    margin: 0 38px;
+    padding: 10px 0 0 0;
+}
+.topic_wrap .wrap_top1 .topic_title.has_detail_title{
+    height: initial;
+    min-height: initial;
+    padding: 0;
+    padding-top: 10px;
+    box-sizing: content-box;
+}
+.topic_wrap .wrap_center {
+    width: 100%;
+    margin-top: 20px;
+   /* position: absolute;
+    top: 34%;*/
+}
+.topic_wrap .wrap_center .topic_option li{
+    list-style-position: outside;
+    list-style-type: lower-alpha;
+    margin-left: 70px;
+}
+.topic_wrap .wrap_center .topic_option li:last-child label{
+    margin-bottom: 0px;
+}
+.topic_wrap .wrap_center .topic_option li.checked{
+    color: #FFD733;
+}  
+.topic_wrap .wrap_center .topic_option {
+    /*width: 80%;*/
+    position: relative;
+    margin: 0 38px;
+    text-align: left;
+    display: table;
+    width: 90%;
+    width: -moz-calc(100% - 38px * 2);
+    width: -webkit-calc(100% - 38px * 2);
+    width: calc(100% - 38px * 2);
+    z-index: 100;
+}
+.topic_wrap .topic_option input[type="radio"]:checked+label {
+    border: 1px solid #FFD733;
+}
+.topic_wrap .topic_option label{
+    width: 100%;
+    display: block;
+    position: relative;
+    height: 50px;
+    line-height: 22px;
+    font-size: 16px;
+    font-weight: normal;
+    letter-spacing: 0;
+    padding-left: 6px;
+    margin-bottom: 20px;
+    /*padding-left: 55px;*/
+    /* width: 260px;*/
+    /*border: 1px solid #FFF;
+    border-radius: 4px;
+    margin-bottom: 20px;*/
+}
+
+.topic_wrap .topic_option li.li_img label{
+    height: auto;
+}
+.topic_wrap .topic_option li.li_img label .section_check{
+    top: 50%;
+    margin-top: -10px;
+}
+.topic_wrap .topic_option label img{
+    display: inline !important;
+}
+.topic_wrap .topic_option label .section_check{
+    display: none;
+    position: absolute;
+    top: 3px;
+    left: -55px;
+    color: #FFD733;
+    font-size: 20px;
+}
+.topic_wrap .topic_option input[type="radio"]{
+    display: none;
+}
+.topic_wrap .topic_option input[type="radio"]:checked+label{
+    color: #FFD733;
+    border: none;
+}
+.topic_wrap .topic_option input[type="radio"]:checked+label .section_check{
+    display: block;
+}
+.topic_wrap .wrap_center .topic_option .option_item {
+    display: none;
+    width: 100%;
+    height: 54px;
+    vertical-align: middle;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    background: url(/static/images/wechatquizzes/topic_btn.png) repeat-x;
+    background-size: 1px 54px;
+    font-size: 1.3rem;
+    color: #868686;
+    border: 1px #282940 solid;
+    padding: 0 10px;
+}
+
+.topic_wrap .wrap_center .topic_option .select {
+    background: url(/static/images/wechatquizzes/topic_sele_btn.png) repeat-x;
+    color: #EEE;
+}
+
+.topic_wrap .wrap_bottom {
+    width: 100%;
+    position: absolute;
+    bottom: 4%;
+}
+
+.topic_wrap .wrap_bottom .lagou_logo {
+    width: 32%;
+    margin: 0 auto;
+}
+
+
+.over_wrap {
+    position: relative;
+    display: none;
+    width: 100%;
+    height: 100%;
+     background-color: #482929;
+    /*background: url(/static/images/wechatquizzes/topic_bg.jpg) no-repeat;*/
+    background-size: 100% 100%;
+}
+
+.over_wrap .bg-right{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    display: block;
+    height:155px ;
+    width: 201px;
+    background: url(/static/images/wechatquizzes/v2/bg.png) no-repeat;
+    background-size: 201px 155px;
+}
+.over_wrap .wrap_top {
+    width: 100%;
+  /*  height: 18%;*/
+    position: absolute;
+    top: 40px;
+}
+
+.over_wrap .wrap_top .over_score {
+   /* width: 50%;*/
+    height: 100%;
+    margin: 0 auto;
+    text-align: left;
+    /*color: #FFF;*/
+    font-size: 1.8rem;
+}
+.over_wrap  .score_percent{
+    font-size: 32px;
+    padding-left: 174px;
+}
+.over_wrap .score_container{
+   /* position: absolute;
+    top: 47px;
+    left: 28px;*/
+    margin: 0 0 10px 28px;
+}
+.over_wrap .wrap_top .over_score .score_title {
+    position: absolute;
+    top: 5px;
+    left: 28px;
+    display: inline-block;
+    height: 32px;
+    width: 155px;
+    background: url(/static/images/wechatquizzes/over_title.png) no-repeat;
+    background-size: 155px 32px;
+  /*  display: block;
+    height: 24%;*/
+}
+
+.over_wrap .wrap_top .over_score .des_content {
+    display: block;
+    /*height: 24%;*/
+    margin: 0 28px;
+    margin-bottom: 25px;
+    font-size: 1.7rem;
+}
+
+.over_wrap .wrap_top .over_score .score {
+    display: table;
+    color: #E53046;
+    height: 76%;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.over_wrap .wrap_top .over_score .score .score_detail_wrap {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.over_wrap .wrap_top .over_score .score .score_detail {
+    font-size: 3.0rem;
+    font-weight: normal;
+}
+
+.over_wrap .wrap_center {
+    width: 100%;
+    position: absolute;
+    top: 162px;
+}
+
+.over_wrap .wrap_center .over_des {
+   /* width: 90%;*/
+    margin: 0 28px;
+   /* background: #F8F8F8;
+    padding: 6%;*/
+}
+
+.over_wrap .wrap_center .over_des .des_title {
+    font-size: 1.0rem;
+    color: #A6A6A6;
+}
+
+.over_wrap .wrap_top .over_score .des_keyword {
+    line-height: 4.0rem;
+    color: #da2f45;
+    text-align: center;
+}
+
+.over_wrap .wrap_center .over_des .des_detail {
+    padding-left: 28px;
+    font-size: 1.6rem;
+    color: #FFFFFF;
+    padding-bottom: 0px;
+}
+.over_wrap .wrap_center .over_des .des_question{
+    position: relative;
+    min-height: 50px;
+    line-height: 22px;
+    margin-bottom: 8px;
+    padding-right: 50px;
+    padding-left: 10px;
+    list-style-type: disc;
+    padding-left: 20px;
+}
+.over_wrap .wrap_center .over_des .des_question .ui-1_check-bold{
+    font-size: 2.0rem;
+    color: #FFD733;
+}
+.over_wrap .wrap_center .over_des .des_question .ui-1_bold-remove{
+    font-size: 2.0rem;
+    color: #FF3636;
+}
+/*.over_wrap .wrap_center .over_des .des_detail .des_question > p {
+    font-size: 1.6rem;
+    color: #FFFFFF;
+    width: 95%;
+    color: #535353;
+    font-size: 1.3rem;
+    display: inline-block;
+}
+*/
+.over_wrap .wrap_center .over_des .des_detail .des_question > span {
+    position: absolute;
+    top: 3px;
+    right: 15px;
+   /* width: 5%;
+    color: #535353;
+    font-size: 2rem;*/
+    display: inline-block;
+}
+
+.over_wrap .wrap_center .over_btn {
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 10px;
+    overflow: hidden;
+}
+
+.over_wrap .wrap_center .over_btn .over_btn_detail {
+    color: #eee;
+    margin: 5px auto;
+    text-align: center;
+    font-size: 1.5rem;
+    line-height: 44px;
+    background-size: 1px 44px;
+    border: 1px #282940 solid;
+    box-shadow: 1px 1px 1px #555;
+}
+
+.over_wrap .wrap_center .over_btn .over_share {
+    float: left;
+    width: 36%;
+}
+
+.over_wrap .wrap_center .over_btn .back {
+    float: right;
+    width: 60%;
+}
+
+.over_wrap .wrap_center .over_btn .back a {
+    color: #eee;
+    text-decoration: none;
+}
+
+.over_wrap .wrap_bottom {
+    width: 100%;
+    position: absolute;
+    bottom: 4%;
+}
+
+.over_wrap .wrap_bottom .lagou_logo {
+    width: 32%;
+    margin: 0 auto;
+}
+.over_wrap .over_btn{
+    position: fixed;
+    bottom: 0;
+    height: 80px;
+    width: 100%;
+    color: #482929;
+    background-color: #FFD733;
+    text-align: center;
+}
+.over_wrap .over_btn .over_btn_detail{
+    font-size: 2.4rem;
+    font-weight: bold;
+    margin-top: 13px;
+}
+.over_wrap .over_btn .over_btn_tip{
+    font-weight: normal;
+     color: #482929;
+    font-size: 1.3rem;
+    margin-top: 5px;
+}
+.share-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: #482929;
+    /*background: url(/static/images/wechatquizzes/topic_bg.jpg) no-repeat;*/
+    background-size: 100% 100%;
+}
+.share_wrap  {
+    display: none;
+     /* display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: 0.9;*/
+
+}
+.share-container  .bg-right{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    display: block;
+    height:155px ;
+    width: 201px;
+    background: url(/static/images/wechatquizzes/v2/bg.png) no-repeat;
+    background-size: 201px 155px;
+}
+.share_wrap section{
+    display: none;
+}
+.share_wrap  .share-img{
+    display: none;
+    position: absolute;
+    top: 11px;
+    left: 50%;
+    margin-left: -154px;
+    height: 255px;
+    width: 309px;
+}
+.share_wrap  .share-img img{
+
+}
+// .share_wrap  .share-img{
+//     position: absolute;
+//     top: 11px;
+//     left: 50%;
+//     margin-left: -150px;
+//     display: block;
+//     height: 302px;
+//     width: 299px;
+//     background: url(/static/images/wechatquizzes/share.png) no-repeat;
+//     background-size: 299px 302px;
+// }
+
+.share_success {
+    display: none;
+  /*  display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;*/
+}
+.share_success .share_success_img {
+    padding-top: 40px;
+    max-width: 271px;
+    margin: 0 auto;
+}
+.share_success .share_success_img img{
+    display: none;
+}
+.share_success .share_success_btn {
+    color: #eee;
+    margin: 5px auto;
+    text-align: center;
+    font-size: 1.5rem;
+    line-height: 44px;
+    background-size: 1px 44px;
+    border: 1px #282940 solid;
+    box-shadow: 1px 1px 1px #555;
+}
+
+.share_text {
+    position: absolute;
+    width: 74%;
+    top: 3%;
+    right: 5%;
+}
+
+.share_text .share_img {
+    width: 100%;
+}
+
+/*.full, .fail {
+    position: absolute;
+    width: 80%;
+    display: none;
+    color: #eee;
+    text-align: center;
+}*/
+
+.over_share .over_btn_tip {
+    color: #482929;
+    font-size: medium;
+   }

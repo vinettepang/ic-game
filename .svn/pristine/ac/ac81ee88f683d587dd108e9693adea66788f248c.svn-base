@@ -1,0 +1,290 @@
+/**
+ * Created by admin on 2017/3/28.
+ */
+var careerism = {
+    current_topic: 0,
+    current_score: 0,
+    topic: [
+        [{
+            t_n: '1',
+            t_t: '2017年4月，微信的好友上限是？',
+            t_o: {
+                '5000': '1',
+                '3000': '0',
+                '1000': '0',
+                '无上限': '0'
+            }
+        }, {
+            t_n: '2',
+            t_t: '排在马斯洛需求层次第二层(从底层往顶层顺序)的是哪一项?',
+            t_o: {
+                '社会': '0',
+                '安全': '1',
+                '自我实现': '0',
+                '尊重': '0'
+            }
+
+        }, {
+            t_n: '3',
+            t_t: '截止到2017年4月，以下哪个功能曾经在微信上出现过？',
+            t_o: {
+                '付费才能看公众号文章': '0',
+                '在群里给指定用户发红包': '0',
+                '付费才能看朋友圈照片': '1',
+                '都没有出现过': '0'
+            }
+        }, {
+            t_n: '4',
+            t_t: '以下哪个人不是产品经理？',
+            t_o: {
+                '俞军': '0',
+                '雷军': '0',
+                '周鸿祎': '0',
+                '李彦宏': '1'
+            }
+        }, {
+            t_n: '5',
+            t_t: '以下哪一对产品不是竞品？',
+            t_o: {
+                '王者荣耀 VS 英雄联盟': '0',
+                '美团 VS 大众点评': '0',
+                '知乎 VS 百度派': '0',
+                'Lofter VS Medium': '1'
+            }
+        }, {
+            t_n: '6',
+            t_t: '从产品结构来看，网易云音乐的哪个模块最重要？',
+            t_o: {
+                '推荐': '0',
+                '歌单': '1',
+                '评论': '0',
+                '动效': '0'
+            }
+        }],
+        [{
+            t_n: '1',
+            t_t: '什么是Hybrid App？',
+            t_o: {
+                '原生App框架嵌套HTML5网页的App': '1',
+                '同时兼容Android和iOS的App': '0',
+                '同时兼容手机和平板的App': '0',
+                '使用多种语言编写的App': '0'
+            }
+        }, {
+            t_n: '2',
+            t_t: '以下哪件事情是微信小程序做不到的？',
+            t_o: {
+                '把小程序里面的页面分享到微信群': '0',
+                '在多个小程序之间切换（类似于切换App）': '0',
+                '把小程序放到手机桌面': '0',
+                '都能做到': '1'
+            }
+
+        }, {
+            t_n: '3',
+            t_t: '下面哪款产品与微博性质不同？',
+            t_o: {
+                '饭否': '0',
+                '嘀咕': '0',
+                'tumblr': '1',
+                'twitter': '0'
+            }
+        }, {
+            t_n: '4',
+            t_t: '下面哪条不是导致网易云音乐不做专辑打分的理由？',
+            t_o: {
+                '对音乐的评价是个主观的事件': '0',
+                '评分容易刷': '0',
+                '用户已不按专辑听歌': '0',
+                '用户习惯去豆瓣看评分': '1'
+            }
+        }, {
+            t_n: '5',
+            t_t: '下面哪款软件不能用来画原型？',
+            t_o: {
+                'PowerPoint': '0',
+                'Excel': '0',
+                'Sketch': '0',
+                '都可以': '1'
+            }
+        }, {
+            t_n: '6',
+            t_t: '以下哪款产品不是社区形态？',
+            t_o: {
+                '陌陌': '0',
+                '映客': '1',
+                '最右': '0',
+                '快手': '0'
+            }
+        }],
+    ],
+
+    res: [
+        [
+            '全军覆没',
+            '出师不利',
+            '壮志未酬',
+            '学艺不精',
+            '前路漫漫',
+            '可塑之才',
+            '骨骼惊奇'
+        ],
+        [
+            '全错也是不容易。送你一本通关秘籍和产品课程，快去深度学习吧！',
+            '对的不多，别灰心。送你一本通关秘籍和产品课程，快去进修吧！',
+            '对的不多，别灰心。送你一本通关秘籍和产品课程，快去进修吧！',
+            '还不赖嘛！奖励一本通关秘籍和产品课程，进阶成为大师吧！',
+            '还不赖嘛！奖励一本通关秘籍和产品课程，进阶成为大师吧！',
+            '还不赖嘛！奖励一本通关秘籍和产品课程，进阶成为大师吧！',
+            '全部正确！奖励一本通关秘籍和白熊独家产品课程，进阶成为大师吧！'
+        ]
+    ],
+    init: function() {
+        this.bindEvent();
+    },
+
+    initTopic: function(section) {
+        var self = this;
+        self.loadTopic(section, 1);
+    },
+
+    loadTopic: function(section, index) {
+        var self = this;
+        console.log(section, index, self.topic);
+        var topic = self.topic[section][index - 1],
+            topic_number = topic.t_n,
+            topic_title = topic.t_t,
+            topic_option = topic.t_o,
+            option_html = '',
+            i = 0;
+        $('#curr_no').html(topic_number);
+        $('#topic_title').html('"' + topic_title + '"');
+        for (var id in topic_option) {
+            //option_html += '<tr><td class="option_item" option_index="' + i + '" option_value="' + topic_option[id] + '">' + id + '</td><tr>';
+            //option_html += '<tr><td><input id="topic_' + topic_number + '_' + i + '" type="radio" name="topic_' + topic_number + '" class="option_item" option_index="' + i + '" option_value="' + topic_option[id] + '" value="" /><label for="topic_' + topic_number + '_' + i + '"><i class="nc-icon-glyph ui-1_check-bold section_check"></i>' + id + '</label></td><tr>';
+            option_html += '<li><input id="topic_' + topic_number + '_' + i + '" type="radio" name="topic_' + topic_number + '" class="option_item" option_index="' + i + '" option_value="' + topic_option[id] + '" value="" /><label for="topic_' + topic_number + '_' + i + '"><i class="nc-icon-glyph ui-1_check-bold section_check"></i>' + id + '</label></li>';
+            i++;
+        }
+        $('#topic_option').html(option_html);
+        self.current_topic++;
+    },
+
+    loadOver: function() {
+        var self = this;
+        score = self.current_score;
+        console.log(score);
+        if (score >= 6) {
+            show_data = self.res[0][6];
+            fanal_data = self.res[1][6];
+            score_percent = '100%';
+        } else if (score == 5) {
+            show_data = self.res[0][5];
+            fanal_data = self.res[1][5];
+            score_percent = '84%';
+        } else if (score == 4) {
+            show_data = self.res[0][4];
+            fanal_data = self.res[1][4];
+            score_percent = '67%';
+        } else if (score == 3) {
+            show_data = self.res[0][3];
+            fanal_data = self.res[1][3];
+            score_percent = '50%';
+        } else if (score == 2) {
+            show_data = self.res[0][2];
+            fanal_data = self.res[1][2];
+            score_percent = '34%';
+        } else if (score == 1) {
+            show_data = self.res[0][1];
+            fanal_data = self.res[1][1];
+            score_percent = '17%';
+        } else {
+            show_data = self.res[0][0];
+            fanal_data = self.res[1][0];
+            score_percent = '0%';
+        }
+
+        keyword = show_data;
+        var content = fanal_data;
+        var tmp = self.topic[section];
+        var detail = '';
+
+        $.each(tmp, function(index, val) {
+            if (arr_value[index] == 1) {
+                var goal = '<i class="nc-icon-glyph ui-1_check-bold"></i>';
+            } else {
+                var goal = '<i class="nc-icon-glyph ui-1_bold-remove"></i>';
+            }
+            //detail += '<div class="des_question"><p>' + val.t_t + '</p><span>' + goal + '</span></div>';
+            detail += '<li class="des_question"><p>' + val.t_t + '</p><span>' + goal + '</span></li>';
+        });
+
+        $('.des_keyword').html(keyword);
+        $('.des_content').html(content);
+        $('.des_detail').html(detail);
+        $('.score_percent').html(score_percent);
+    },
+
+    bindEvent: function() {
+        var self = this;
+        $('.wrap').on('click', '.enter_btn', function() {
+            $('.enter_wrap').css('display', 'none');
+            section = $('.topic_section input[name="section"]:checked').val();
+            topic_length = self.topic[section].length;
+            $('.count').html(topic_length);
+            $('.topic_wrap').css('display', 'block');
+            self.initTopic(section);
+        });
+        arr_value = [];
+        $('.wrap').on('click', '.option_item', function() {
+            var _this = $(this);
+            var value = Number(_this.attr('option_value'));
+
+            _this.addClass('select');
+            console.log(arr_value);
+            $('.ic-next-topic').attr('data-val', value);
+            $('.ic-next-topic').removeAttr('disabled').removeClass('btn-disabled').addClass('btn-active');
+
+        });
+        $('.wrap').on('click', '.ic-next-topic', function() {
+            var _this = $(this);
+            //var value = $('.ic-next-topic').attr('data-val');
+            var value = Number($('.ic-next-topic').attr('data-val'));
+            _this.attr('disabled', "true").removeClass('btn-active').addClass('btn-disabled');
+            console.log('arr_value' + arr_value);
+            arr_value.push(value);
+            self.current_score = self.current_score + value;
+            console.log('self.current_score' + self.current_score);
+            // console.log('to next');
+            // console.log('self.current_topic' + self.current_topic);
+            // console.log('topic_length' + topic_length);
+            if (self.current_topic == 5) {
+                _this.find('.next-text').html('看结果');
+            }
+            if (self.current_topic < topic_length) {
+                $('.fade_wrap').fadeOut('normal', function() {
+                    self.loadTopic(section, self.current_topic + 1);
+                    $(this).fadeIn('normal');
+                });
+
+            } else {
+                $('.topic_wrap').css('display', 'none');
+                self.loadOver();
+                $('.over_wrap').css('display', 'block');
+
+                if (score == topic_length) {
+                    $('.over_share .full').css('display', 'block');
+                } else {
+                    $('.over_share .full').css('display', 'block');
+                }
+            }
+        });
+        $('.topic_option').on('click', 'li', function() {
+            $(this).addClass('checked');
+            $(this).siblings().removeClass('checked');
+        });
+        /*$('.wrap').on('click', '.share_success_btn', function () {
+            $('.share_success').css('display', 'none');
+        });*/
+
+    }
+};
